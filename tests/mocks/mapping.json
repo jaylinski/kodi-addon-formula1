@@ -1,0 +1,14 @@
+[
+    {
+        "url": "https://api.formula1.com/v1/editorial-assemblies/videos/2BiKQUC040cmuysoQsgwcK",
+        "mock": "api_editorial-assemblies_videos.json"
+    },
+    {
+        "url": "https://api.formula1.com/v1/fom-assets/videos?tag=F1%3ATopic%2FFeature&offset=0&limit=3",
+        "mock": "api_fom-assets_videos.json"
+    },
+    {
+        "url": "https://player.ooyala.com/sas/player_api/v1/authorization/embed_code/tudTgyOkO_Oa2kec6fNFnApvZ8ig/5paGs4ajE63XiRJPxIs6yH322NPXzKBZ?domain=http%3A%2F%2Fooyala.com&supportedFormats=mp4",
+        "mock": "player_auth.json"
+    }
+]
