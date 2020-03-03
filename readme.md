@@ -10,6 +10,8 @@
 This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface for
 [formula1.com](https://www.formula1.com/).
 
+If you are a F1TV subscriber, consider using the [F1TV add-on](https://github.com/bbsan2k/plugin.video.f1tv).
+
 > This plugin is not official, approved or endorsed by Formula 1.
 
 ## Features
@@ -18,10 +20,6 @@ This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface fo
 * Play videos
 
 ## Installation
-
-### Kodi Repository
-
-### Manual
 
 * [Download the latest release](https://github.com/jaylinski/kodi-addon-formula1/releases) (`plugin.video.formula1.zip`)
 * Copy the zip file to your Kodi system
