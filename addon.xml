@@ -9,14 +9,15 @@
         <provides>video</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
+        <summary lang="de_DE">Videos von der Formula 1 Website</summary>
         <summary lang="en_GB">Videos from the Formula 1 website</summary>
         <disclaimer lang="en_GB">This plugin is not official, approved or endorsed by Formula 1.</disclaimer>
         <platform>all</platform>
         <license>MIT</license>
-        <forum></forum>
+        <forum>https://forum.kodi.tv/showthread.php?tid=352138</forum>
         <website>https://www.formula1.com</website>
         <source>https://github.com/jaylinski/kodi-addon-formula1</source>
-        <news>1.0.0 (2020-02-28)
+        <news>1.0.0 (2020-03-03)
 Initial release.
         </news>
         <assets>

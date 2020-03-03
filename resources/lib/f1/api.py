@@ -1,10 +1,7 @@
-import base64
-
 from future import standard_library
 standard_library.install_aliases()  # noqa: E402
 
-import hashlib
-import json
+import base64
 import requests
 import urllib.parse
 import xbmc
@@ -24,18 +21,16 @@ class Api:
     api_path_editorial = "editorial-assemblies/videos/2BiKQUC040cmuysoQsgwcK"
     api_path_videos = "fom-assets/videos"
 
-    # Ooyala PCODE (https://help.ooyala.com/video-platform/api/player_v4_authorization_api.html)
+    # Ooyala (https://help.ooyala.com/video-platform/concepts/book_ref_apis.html)
     player_api_url = "https://player.ooyala.com"
-    player_api_path_auth = "/sas/player_api/v2/authorization/embed_code/{pcode}/{embed_codes}"
-    player_api_key = "tudTgyOkO_Oa2kec6fNFnApvZ8ig"
+    player_api_path = "/sas/player_api/v2/authorization/embed_code/{pcode}/{embed_codes}"
+    player_api_pcode = "tudTgyOkO_Oa2kec6fNFnApvZ8ig"
 
     video_stream = ""
-    thumbnail_quality = ".transform/5col/image.jpg"
+    thumbnail_quality = "transform/5col/image.jpg"
 
-    def __init__(self, settings, vfs, cache):
+    def __init__(self, settings):
         self.settings = settings
-        self.vfs = vfs
-        self.cache = cache
 
         self.api_limit = int(self.settings.get("list.size"))
         self.video_stream = self.settings.get("video.format")
@@ -60,7 +55,7 @@ class Api:
         return collection
 
     def video_editorial(self):
-        res = self._do_api_request(self.api_path_editorial, {}, 0)
+        res = self._do_api_request(self.api_path_editorial, {})
         collection = self._map_json_to_collection(res)
         collection.next_href = self.api_path_videos + "?" + urllib.parse.urlencode({
             "limit": self.api_limit,
@@ -70,7 +65,7 @@ class Api:
         return collection
 
     def resolve_embed_code(self, embed_code):
-        auth = self.player_api_path_auth.format(pcode=self.player_api_key, embed_codes=embed_code)
+        auth = self.player_api_path.format(pcode=self.player_api_pcode, embed_codes=embed_code)
         res = self._do_player_request(auth, {
             "domain": "http%3A%2F%2Fooyala.com",
             "supportedFormats": "mp4",
@@ -78,13 +73,12 @@ class Api:
 
         return self._get_stream_by_format(res["authorization_data"][embed_code]["streams"])
 
-    def _do_api_request(self, path, params, cache=0):
+    def _do_api_request(self, path, params):
         headers = {
             "Accept-Encoding": "gzip",
             "apikey": self.api_key,
         }
         path = self.api_base_url + path
-        cache_key = hashlib.sha1((path + str(params)).encode()).hexdigest()
 
         xbmc.log(
             "plugin.video.formula1::Api() Calling %s with header %s and payload %s" %
@@ -92,20 +86,7 @@ class Api:
             xbmc.LOGDEBUG
         )
 
-        # If caching is active, check for an existing cached file.
-        if cache:
-            cached_response = self.cache.get(cache_key, cache)
-            if cached_response:
-                return json.loads(cached_response)
-
-        # Send the request.
-        response = requests.get(path, headers=headers, params=params).json()
-
-        # If caching is active, cache the response.
-        if cache:
-            self.cache.add(cache_key, json.dumps(response))
-
-        return response
+        return requests.get(path, headers=headers, params=params).json()
 
     def _do_player_request(self, path, params):
         headers = {"Accept-Encoding": "gzip"}
@@ -126,8 +107,8 @@ class Api:
         collection.limit = self.api_limit
         collection.next_href = None
 
-        if "offset" in json_obj:
-            collection.offset = json_obj.get("offset")
+        if "skip" in json_obj:
+            collection.offset = json_obj.get("skip")
 
         # Get content type
         if "contentType" in json_obj and json_obj["contentType"] == "viewAssembly":
@@ -164,7 +145,7 @@ class Api:
         return collection
 
     def _get_thumbnail(self, item):
-        return "{}{}".format(item["thumbnail"]["url"], self.thumbnail_quality)
+        return "{}.{}".format(item["thumbnail"]["url"], self.thumbnail_quality)
 
     def _get_stream_by_format(self, streams):
         video_format = self.settings.VIDEO_FORMAT[self.video_stream]

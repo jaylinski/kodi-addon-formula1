@@ -37,19 +37,6 @@ msgctxt "#30021"
 msgid "Streaming"
 msgstr ""
 
-# Settings - Advanced
-msgctxt "#30051"
-msgid "Advanced"
-msgstr ""
-
-msgctxt "#30060"
-msgid "Cache"
-msgstr ""
-
-msgctxt "#30061"
-msgid "Clear cache"
-msgstr ""
-
 # GUI - Root
 msgctxt "#30101"
 msgid "Videos"
@@ -57,11 +44,6 @@ msgstr ""
 
 msgctxt "#30109"
 msgid "Settings"
-msgstr ""
-
-# GUI - Settings
-msgctxt "#30401"
-msgid "Cache cleared"
 msgstr ""
 
 # GUI - Generic

@@ -6,8 +6,4 @@
         <setting label="30020" type="lsep"/>
         <setting id="video.format" type="labelenum" label="30021" values="360p|720p|1080p" default="1080p"/>
     </category>
-    <category label="30051">
-        <setting label="30060" type="lsep"/>
-        <setting label="30061" type="action" action="RunPlugin(plugin://$ID/settings/cache/clear/)" option="close"/>
-    </category>
 </settings>

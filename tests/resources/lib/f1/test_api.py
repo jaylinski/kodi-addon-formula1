@@ -12,7 +12,7 @@ from resources.lib.f1.api import Api
 class ApiTestCase(TestCase):
 
     def setUp(self):
-        self.api = Api(Settings(MagicMock()), MagicMock(), MagicMock())
+        self.api = Api(Settings(MagicMock()))
 
     def test_get_editorial(self):
         with open("./tests/mocks/api_editorial-assemblies_videos.json") as f:
@@ -57,11 +57,25 @@ class ApiTestCase(TestCase):
         self.assertEqual(res.items[0].label, "Jolyon Palmer: Why times don't matter in testing")
         self.assertEqual(res.next_href, None)
 
-        self.api.api_limit = 10
-        res = self.api.call("foo?tag=bar&limit=10&offset=0")
+        self.api.api_limit = 3
+        res = self.api.call("foo?tag=bar&limit=3&offset=0")
 
         self.assertEqual(res.items[0].label, "Jolyon Palmer: Why times don't matter in testing")
-        self.assertEqual(res.next_href, "foo?tag=bar&limit=10&offset=10")
+        self.assertEqual(res.limit, 3)
+        self.assertEqual(res.offset, 0)
+        self.assertEqual(res.next_href, "foo?tag=bar&limit=3&offset=3")
+
+        with open("./tests/mocks/api_fom-assets_videos_page_2.json") as f:
+            mock_data = f.read()
+
+        self.api._do_api_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.call("foo?tag=bar&limit=3&offset=3")
+
+        self.assertEqual(res.items[0].label, "page 2 title")
+        self.assertEqual(res.limit, 3)
+        self.assertEqual(res.offset, 3)
+        self.assertEqual(res.next_href, "foo?tag=bar&limit=3&offset=6")
 
     def test_resolve_embed_code(self):
         with open("./tests/mocks/player_auth.json") as f:
