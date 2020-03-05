@@ -65,10 +65,12 @@ class Api:
         return collection
 
     def resolve_embed_code(self, embed_code):
+        video_format = self._get_video_format()
+
         auth = self.player_api_path.format(pcode=self.player_api_pcode, embed_codes=embed_code)
         res = self._do_player_request(auth, {
             "domain": "http%3A%2F%2Fooyala.com",
-            "supportedFormats": "mp4",
+            "supportedFormats": video_format.get("format"),
         })
 
         return self._get_stream_by_format(res["authorization_data"][embed_code]["streams"])
@@ -146,13 +148,23 @@ class Api:
     def _get_thumbnail(self, item):
         return "{}.{}".format(item["thumbnail"]["url"], self.thumbnail_quality)
 
-    def _get_stream_by_format(self, streams):
+    def _get_video_format(self):
         video_format = self.settings.VIDEO_FORMAT[self.video_stream]
         video_format = video_format.split(":")
-        video_quality = int(video_format[1])
+
+        return {
+            "format": video_format[0],
+            "quality": int(video_format[1]) if len(video_format) >= 2 else None
+        }
+
+    def _get_stream_by_format(self, streams):
+        video_format = self._get_video_format()
+
+        if video_format.get("format") == "m3u8":
+            return base64.b64decode(streams[0]["url"]["data"]).decode("ascii")
 
         for stream in streams:
-            if stream.get("height") == video_quality:
+            if stream.get("height") == video_format.get("quality"):
                 return base64.b64decode(stream["url"]["data"]).decode("ascii")
 
         # Fallback (if no matching resolution was found)

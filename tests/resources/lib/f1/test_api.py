@@ -78,7 +78,7 @@ class ApiTestCase(TestCase):
         self.assertEqual(res.next_href, "foo?tag=bar&limit=3&offset=6")
 
     def test_resolve_embed_code(self):
-        with open("./tests/mocks/player_auth.json") as f:
+        with open("./tests/mocks/player_auth_mp4.json") as f:
             mock_data = f.read()
 
         self.api._do_player_request = Mock(return_value=json.loads(mock_data))
@@ -87,3 +87,13 @@ class ApiTestCase(TestCase):
         res = self.api.resolve_embed_code("5paGs4ajE63XiRJPxIs6yH322NPXzKBZ")
 
         self.assertEqual(res, "https://f1.pc.cdn.bitgravity.com/5paGs4ajE63XiRJPxIs6yH322NPXzKBZ/DOcJ-FxaFrRg4gtDEwOjIwbTowODE7WK")
+
+        with open("./tests/mocks/player_auth_hls.json") as f:
+            mock_data = f.read()
+
+        self.api._do_player_request = Mock(return_value=json.loads(mock_data))
+        self.api.video_stream = "HLS (Adaptive)"
+
+        res = self.api.resolve_embed_code("5paGs4ajE63XiRJPxIs6yH322NPXzKBZ")
+
+        self.assertEqual(res, "https://player.ooyala.com/hls/player/iphone/5paGs4ajE63XiRJPxIs6yH322NPXzKBZ.m3u8?ssl=true&secure_ios_token=VTU3citINzFZVG9qYTMvc2VUVUpMRU1FcjBMWHZCMFgrZTkvQkNxQ1NjelBaNVptZmp0NVBmUlJ6Y0hQCmM4cytGQ1BsMmNpS1ZtU2FPRmQ1c3lhWlVRPT0K")

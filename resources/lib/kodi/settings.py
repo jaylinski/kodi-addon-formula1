@@ -1,6 +1,7 @@
 class Settings:
 
     VIDEO_FORMAT = {
+        "HLS (Adaptive)": "m3u8",
         "1080p": "mp4:1080",
         "720p": "mp4:720",
         "360p": "mp4:360",
