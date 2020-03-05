@@ -25,7 +25,7 @@ def run():
     path = url.path
     handle = int(sys.argv[1])
     args = urllib.parse.parse_qs(sys.argv[2][1:])
-    xbmcplugin.setContent(handle, 'videos')
+    xbmcplugin.setContent(handle, "videos")
 
     if path == PATH_ROOT:
         action = args.get("action", None)

@@ -25,7 +25,7 @@ adb shell pm list packages | grep f1
 adb shell pm path com.softpauer.f1timingapp2014.basic
 
 # Download APK from phone
-adb pull/data/app/com.softpauer.f1timingapp2014.basic-5_5xt0A4JQp9O0bhh2I-5A==/base.apk
+adb pull /data/app/com.softpauer.f1timingapp2014.basic-5_5xt0A4JQp9O0bhh2I-5A==/base.apk
 mv base.apk com.softpauer.f1timingapp2014.basic.apk
 ```
 

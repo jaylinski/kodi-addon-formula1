@@ -98,7 +98,6 @@ class Api:
             xbmc.LOGDEBUG
         )
 
-        # Send the request.
         return requests.get(path, headers=headers, params=params).json()
 
     def _map_json_to_collection(self, json_obj):
@@ -154,7 +153,7 @@ class Api:
 
         for stream in streams:
             if stream.get("height") == video_quality:
-                return base64.b64decode(stream["url"]["data"]).decode('ascii')
+                return base64.b64decode(stream["url"]["data"]).decode("ascii")
 
-        # Fallback (if no matching resolution was found
-        return base64.b64decode(streams[0]["url"]["data"]).decode('ascii')
+        # Fallback (if no matching resolution was found)
+        return base64.b64decode(streams[0]["url"]["data"]).decode("ascii")
