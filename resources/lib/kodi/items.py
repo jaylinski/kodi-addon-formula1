@@ -1,6 +1,8 @@
 from future import standard_library
 standard_library.install_aliases()  # noqa: E402
 
+from resources.routes import *
+
 import urllib.parse
 import xbmcgui
 
@@ -15,15 +17,51 @@ class Items:
 
         # Videos
         list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30101))
-        url = self.addon_base + "/?" + urllib.parse.urlencode({
-            "action": "editorial",
-        })
+        url = self.addon_base + PATH_VIDEOS
+        items.append((url, list_item, True))
+
+        # Standings
+        list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30102))
+        url = self.addon_base + PATH_STANDINGS
+        items.append((url, list_item, True))
+
+        # Racing
+        list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30103))
+        url = self.addon_base + PATH_RACING
         items.append((url, list_item, True))
 
         # Settings
         list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30109))
         url = self.addon_base + "/?action=settings"
         items.append((url, list_item, False))
+
+        return items
+
+    def standings(self):
+        items = []
+
+        # Drivers
+        list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30120))
+        url = self.addon_base + PATH_STANDINGS + "?" + urllib.parse.urlencode({
+            "action": "drivers",
+        })
+        items.append((url, list_item, True))
+
+        # Constructors
+        list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30121))
+        url = self.addon_base + PATH_STANDINGS + "?" + urllib.parse.urlencode({
+            "action": "constructors",
+        })
+        items.append((url, list_item, True))
+
+        # Race results @TODO
+        """
+        list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30122))
+        url = self.addon_base + PATH_STANDINGS + "?" + urllib.parse.urlencode({
+            "action": "results",
+        })
+        items.append((url, list_item, True))
+        """
 
         return items
 

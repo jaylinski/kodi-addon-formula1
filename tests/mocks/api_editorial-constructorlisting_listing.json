@@ -1,0 +1,326 @@
+{
+    "season": "2020",
+    "title": "F1 Teams 2020",
+    "seoDescription": "Discover the Formula 1 2020 teams - drivers, podium finishes, championship titles and everything you need to know about the teams in this year's F1 Championship.",
+    "promotions": [
+        {
+            "name": "F2 Teams and Drivers promo Atom",
+            "promoImage": {
+                "title": "F2_Image.png",
+                "path": "/content/dam/fom-website/2018-redesign-assets/Promotional_atom_images/F2_Image.png",
+                "url": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Promotional_atom_images/F2_Image.png"
+            },
+            "promoLogoImage": {
+                "title": "F2_Logo.png",
+                "path": "/content/dam/fom-website/2018-redesign-assets/Promotional_atom_images/F2_Logo.png",
+                "url": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Promotional_atom_images/F2_Logo.png"
+            },
+            "promoHeaderText": "Formula 2",
+            "promoBodyText": "Check out the F2 team and driver line-ups",
+            "promoCtaLabel": "EXPLORE",
+            "promoCtaLink": "http://www.fiaformula2.com/Teams-and-Drivers"
+        },
+        {
+            "name": "F3 Teams and Drivers promo Atom",
+            "promoImage": {
+                "title": "F3_Image.png",
+                "path": "/content/dam/fom-website/2018-redesign-assets/Promotional_atom_images/F3_Image.png",
+                "url": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Promotional_atom_images/F3_Image.png"
+            },
+            "promoLogoImage": {
+                "title": "F3_Logo.png",
+                "path": "/content/dam/fom-website/2018-redesign-assets/Promotional_atom_images/F3_Logo.png",
+                "url": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Promotional_atom_images/F3_Logo.png"
+            },
+            "promoHeaderText": "Formula 3",
+            "promoBodyText": "Check out the F3 team and driver line-ups",
+            "promoCtaLabel": "EXPLORE",
+            "promoCtaLink": "http://www.fiaformula3.com/Teams-and-Drivers"
+        }
+    ],
+    "seasonState": "DURING-SEASON",
+    "year": "2020",
+    "constructorStandingLength": "10",
+    "constructors": [
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png",
+                    "driverLastName": "Bottas",
+                    "driverFirstName": "Valtteri",
+                    "driverReference": "VALBOT01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Finland.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png",
+                    "driverLastName": "Hamilton",
+                    "driverFirstName": "Lewis",
+                    "driverReference": "LEWHAM01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/United%20Kingdom.jpg"
+                }
+            ],
+            "teamColourCode": "00D2BE",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/mercedes.png",
+            "teamPageUrl": "/en/teams/Mercedes.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/mercedes-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/mercedes-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/mercedes-white.png",
+            "positionNumber": "1",
+            "teamName": "Mercedes",
+            "seasonPoints": 146,
+            "teamKey": "543"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png",
+                    "driverLastName": "Albon",
+                    "driverFirstName": "Alexander",
+                    "driverReference": "ALEALB01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Thailand.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png",
+                    "driverLastName": "Verstappen",
+                    "driverFirstName": "Max",
+                    "driverReference": "MAXVER01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Netherlands.jpg"
+                }
+            ],
+            "teamColourCode": "0600ef",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/red-bull-racing.png",
+            "teamPageUrl": "/en/teams/Red-Bull-Racing.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/red-bull-racing-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/red-bull-racing-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/red-bull-racing-white.png",
+            "positionNumber": "2",
+            "teamName": "Red Bull Racing",
+            "seasonPoints": 78,
+            "teamKey": "536"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png",
+                    "driverLastName": "Norris",
+                    "driverFirstName": "Lando",
+                    "driverReference": "LANNOR01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/United%20Kingdom.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png",
+                    "driverLastName": "Sainz",
+                    "driverFirstName": "Carlos",
+                    "driverReference": "CARSAI01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Spain.jpg"
+                }
+            ],
+            "teamColourCode": "FF8700",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/mclaren.png",
+            "teamPageUrl": "/en/teams/McLaren.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/mclaren-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/mclaren-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/mclaren-white.png",
+            "positionNumber": "3",
+            "teamName": "McLaren",
+            "seasonPoints": 51,
+            "teamKey": "529"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/S/SEBVET01_Sebastian_Vettel/sebvet01.png",
+                    "driverLastName": "Vettel",
+                    "driverFirstName": "Sebastian",
+                    "driverReference": "SEBVET01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Germany.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png",
+                    "driverLastName": "Leclerc",
+                    "driverFirstName": "Charles",
+                    "driverReference": "CHALEC01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Monaco.jpg"
+                }
+            ],
+            "teamColourCode": "DC0000",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/ferrari.png",
+            "teamPageUrl": "/en/teams/Ferrari.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/ferrari-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/ferrari-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/ferrari-white.png",
+            "positionNumber": "4",
+            "teamName": "Ferrari",
+            "seasonPoints": 43,
+            "teamKey": "526"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png",
+                    "driverLastName": "Ocon",
+                    "driverFirstName": "Esteban",
+                    "driverReference": "ESTOCO01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/France.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/D/DANRIC01_Daniel_Ricciardo/danric01.png",
+                    "driverLastName": "Ricciardo",
+                    "driverFirstName": "Daniel",
+                    "driverReference": "DANRIC01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Australia.jpg"
+                }
+            ],
+            "teamColourCode": "FFF500",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/renault.png",
+            "teamPageUrl": "/en/teams/Renault.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/renault-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/renault-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/renault-white.png",
+            "positionNumber": "5",
+            "teamName": "Renault",
+            "seasonPoints": 32,
+            "teamKey": "184"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png",
+                    "driverLastName": "Stroll",
+                    "driverFirstName": "Lance",
+                    "driverReference": "LANSTR01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Canada.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png",
+                    "driverLastName": "Hulkenberg",
+                    "driverFirstName": "Nico",
+                    "driverReference": "NICHUL01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Germany.jpg"
+                }
+            ],
+            "teamColourCode": "F596C8",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/racing-point.png",
+            "teamPageUrl": "/en/teams/Racing-Point.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/racing-point-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/racing-point-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/racing-point-white.png",
+            "positionNumber": "6",
+            "teamName": "Racing Point",
+            "seasonPoints": 27,
+            "teamKey": "580"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/D/DANKVY01_Daniil_Kvyat/dankvy01.png",
+                    "driverLastName": "Kvyat",
+                    "driverFirstName": "Daniil",
+                    "driverReference": "DANKVY01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Russian%20Federation.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png",
+                    "driverLastName": "Gasly",
+                    "driverFirstName": "Pierre",
+                    "driverReference": "PIEGAS01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/France.jpg"
+                }
+            ],
+            "teamColourCode": "ffffff",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/alphatauri.png",
+            "teamPageUrl": "/en/teams/AlphaTauri.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/alphatauri-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/alphatauri-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/alphatauri-white.png",
+            "positionNumber": "7",
+            "teamName": "AlphaTauri",
+            "seasonPoints": 13,
+            "teamKey": "598"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/A/ANTGIO01_Antonio_Giovinazzi/antgio01.png",
+                    "driverLastName": "Giovinazzi",
+                    "driverFirstName": "Antonio",
+                    "driverReference": "ANTGIO01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Italy.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/K/KIMRAI01_Kimi_R%C3%A4ikk%C3%B6nen/kimrai01.png",
+                    "driverLastName": "Räikkönen",
+                    "driverFirstName": "Kimi",
+                    "driverReference": "KIMRAI01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Finland.jpg"
+                }
+            ],
+            "teamColourCode": "960000",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/alfa-romeo-racing.png",
+            "teamPageUrl": "/en/teams/Alfa-Romeo-Racing.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/alfa-romeo-racing-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/alfa-romeo-racing-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/alfa-romeo-racing-white.png",
+            "positionNumber": "8",
+            "teamName": "Alfa Romeo Racing",
+            "seasonPoints": 2,
+            "teamKey": "581"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/K/KEVMAG01_Kevin_Magnussen/kevmag01.png",
+                    "driverLastName": "Magnussen",
+                    "driverFirstName": "Kevin",
+                    "driverReference": "KEVMAG01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Denmark.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/R/ROMGRO01_Romain_Grosjean/romgro01.png",
+                    "driverLastName": "Grosjean",
+                    "driverFirstName": "Romain",
+                    "driverReference": "ROMGRO01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/France.jpg"
+                }
+            ],
+            "teamColourCode": "787878",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/haas-f1-team.png",
+            "teamPageUrl": "/en/teams/Haas-F1-Team.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/haas-f1-team-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/haas-f1-team-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/haas-f1-team-white.png",
+            "positionNumber": "9",
+            "teamName": "Haas F1 Team",
+            "seasonPoints": 1,
+            "teamKey": "557"
+        },
+        {
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/N/NICLAF01_Nicholas_Latifi/niclaf01.png",
+                    "driverLastName": "Latifi",
+                    "driverFirstName": "Nicholas",
+                    "driverReference": "NICLAF01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/Canada.jpg"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png",
+                    "driverLastName": "Russell",
+                    "driverFirstName": "George",
+                    "driverReference": "GEORUS01",
+                    "driverCountryFlagImage": "https://www.formula1.com/content/dam/fom-website/flags/United%20Kingdom.jpg"
+                }
+            ],
+            "teamColourCode": "0082fa",
+            "teamImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/williams.png",
+            "teamPageUrl": "/en/teams/Williams.html",
+            "teamCroppedImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/williams-half.png",
+            "teamLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/williams-logo.png",
+            "teamNegativeLogoImage": "https://www.formula1.com/content/dam/fom-website/teams/2020/williams-white.png",
+            "positionNumber": "10",
+            "teamName": "Williams",
+            "seasonPoints": 0,
+            "teamKey": "481"
+        }
+    ]
+}

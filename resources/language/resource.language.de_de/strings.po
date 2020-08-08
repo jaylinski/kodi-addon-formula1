@@ -42,9 +42,30 @@ msgctxt "#30101"
 msgid "Videos"
 msgstr ""
 
+msgctxt "#30102"
+msgid "Standings"
+msgstr "Klassement"
+
+msgctxt "#30103"
+msgid "Racing"
+msgstr "Rennen"
+
 msgctxt "#30109"
 msgid "Settings"
 msgstr "Einstellungen"
+
+# GUI - Standings
+msgctxt "#30120"
+msgid "Drivers"
+msgstr "Fahrer"
+
+msgctxt "#30121"
+msgid "Constructors"
+msgstr "Konstrukteure"
+
+msgctxt "#30122"
+msgid "Race results"
+msgstr "Rennergebnisse"
 
 # GUI - Generic
 msgctxt "#30901"

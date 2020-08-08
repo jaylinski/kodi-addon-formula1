@@ -7,7 +7,11 @@ import urllib.parse
 import xbmc
 
 from .api_collection import ApiCollection
+from resources.lib.models.constructor import Constructor
+from resources.lib.models.driver import Driver
 from resources.lib.models.editorial import Editorial
+from resources.lib.models.event import Event
+from resources.lib.models.result import Result
 from resources.lib.models.video import Video
 
 
@@ -18,8 +22,13 @@ class Api:
     api_key = "jHveMyuKQgXOCG3DN2ucX5zVmCpWNsFM"  # Extracted from public Formula 1 Android App
     api_limit = 10
 
+    # API endpoints
     api_path_editorial = "editorial-assemblies/videos/2BiKQUC040cmuysoQsgwcK"
     api_path_videos = "fom-assets/videos"
+    api_path_constructors = "editorial-constructorlisting/listing"
+    api_path_drivers = "editorial-driverlisting/listing"
+    api_path_events = "editorial-eventlisting/events"
+    api_path_results = "fom-results/raceresults"
 
     # Ooyala (https://help.ooyala.com/video-platform/concepts/book_ref_apis.html)
     player_api_url = "https://player.ooyala.com"
@@ -63,6 +72,10 @@ class Api:
         })
 
         return collection
+
+    def standings(self, path):
+        res = self._do_api_request(path, {})
+        return self._map_json_to_collection(res)
 
     def resolve_embed_code(self, embed_code):
         video_format = self._get_video_format()
@@ -108,6 +121,8 @@ class Api:
         collection.limit = self.api_limit
         collection.next_href = None
 
+        item_type = None
+
         if "skip" in json_obj:
             collection.offset = json_obj.get("skip")
 
@@ -116,6 +131,18 @@ class Api:
             items = json_obj.get("regions")
         elif "videos" in json_obj:
             items = json_obj.get("videos")
+        elif "drivers" in json_obj:
+            items = json_obj.get("drivers")
+            item_type = "drivers"
+        elif "constructors" in json_obj:
+            items = json_obj.get("constructors")
+            item_type = "constructors"
+        elif "events" in json_obj:
+            items = json_obj.get("events")
+            item_type = "events"
+        elif "raceresults" in json_obj:
+            items = json_obj.get("raceresults")
+            item_type = "raceresults"
         else:
             raise RuntimeError("Api JSON seems to be invalid")
 
@@ -133,6 +160,35 @@ class Api:
                 video_collection = self._map_json_to_collection(item)
                 for video in video_collection.items:
                     collection.items.append(video)
+
+            elif item_type == "drivers":
+                driver = Driver(id=item["driverReference"], label=Driver.get_label(item))
+                driver.thumb = item["driverImage"]
+                driver.info = {
+                    "team": item["teamName"]
+                }
+                collection.items.append(driver)
+
+            elif item_type == "constructors":
+                constructor = Constructor(id=item["teamKey"], label=Constructor.get_label(item))
+                constructor.thumb = item["teamCroppedImage"]
+                constructor.info = {
+                    "drivers": Constructor.get_drivers(item["drivers"])
+                }
+                collection.items.append(constructor)
+
+            elif item_type == "raceresults":
+                result = Result(id=item["meetingKey"], label=item["meetingName"])
+                result.thumb = item["countryFlag"]
+                collection.items.append(result)
+
+            elif item_type == "events":
+                event = Event(id=item["meetingKey"], label=item["meetingOfficialName"])
+                event.thumb = item["countryFlag"]
+                event.info = {
+                    "description": Event.get_description(item)
+                }
+                collection.items.append(event)
 
             elif "ooyalaVideoId" in item:
                 video = Video(id=item["ooyalaVideoId"], label=item["caption"])

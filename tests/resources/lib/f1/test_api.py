@@ -33,6 +33,56 @@ class ApiTestCase(TestCase):
 
         self.assertEqual(res.next_href, "fom-assets/videos?limit=8&offset=6")
 
+    def test_get_drivers(self):
+        with open("./tests/mocks/api_editorial-driverlisting_listing.json") as f:
+            mock_data = f.read()
+
+        self.api._do_api_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.standings("api_path")
+
+        self.assertEqual(res.items[0].label, "1 - Lewis Hamilton - 88 PTS")
+        self.assertEqual(res.items[0].thumb, "https://www.formula1.com/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png")
+
+        self.assertEqual(res.items[1].label, "2 - Valtteri Bottas - 58 PTS")
+        self.assertEqual(res.items[1].thumb, "https://www.formula1.com/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png")
+
+
+    def test_get_constructors(self):
+        with open("./tests/mocks/api_editorial-constructorlisting_listing.json") as f:
+            mock_data = f.read()
+
+        self.api._do_api_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.standings("api_path")
+
+        self.assertEqual(res.items[0].label, "1 - Mercedes - 146 PTS")
+        self.assertEqual(res.items[0].thumb, "https://www.formula1.com/content/dam/fom-website/teams/2020/mercedes-half.png")
+
+        self.assertEqual(res.items[1].label, "2 - Red Bull Racing - 78 PTS")
+        self.assertEqual(res.items[1].thumb, "https://www.formula1.com/content/dam/fom-website/teams/2020/red-bull-racing-half.png")
+
+    def test_get_racing_results(self):
+        with open("./tests/mocks/api_fom-results_raceresults.json") as f:
+            mock_data = f.read()
+
+        self.api._do_api_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.standings("api_path")
+
+        self.assertEqual(res.items[0].label, "Pre-Season Test 1")
+
+    def test_get_events(self):
+        with open("./tests/mocks/api_editorial-eventlisting_events.json") as f:
+            mock_data = f.read()
+
+        self.api._do_api_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.standings("api_path")
+
+        self.assertEqual(res.items[0].label, "Formula 1 Pre-season Testing 2020")
+        self.assertEqual(res.items[0].thumb, "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/spain-flag.png")
+
     def test_call(self):
         with open("./tests/mocks/api_fom-assets_videos.json") as f:
             mock_data = f.read()

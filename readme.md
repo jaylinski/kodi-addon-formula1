@@ -18,6 +18,7 @@ If you are a F1TV subscriber, consider using the [F1TV add-on](https://github.co
 
 * Browse categories
 * Play videos
+* List standings and events
 
 ## Installation
 
