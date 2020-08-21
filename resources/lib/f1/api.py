@@ -1,8 +1,11 @@
 from future import standard_library
+from future.utils import PY2
 standard_library.install_aliases()  # noqa: E402
 
 import base64
+import datetime
 import requests
+import time
 import urllib.parse
 import xbmc
 
@@ -21,6 +24,7 @@ class Api:
     api_base_url = "https://api.formula1.com/v1/"
     api_key = "jHveMyuKQgXOCG3DN2ucX5zVmCpWNsFM"  # Extracted from public Formula 1 Android App
     api_limit = 10
+    api_date_format = "%Y-%m-%dT%H:%M:%S"
 
     # API endpoints
     api_path_editorial = "editorial-assemblies/videos/2BiKQUC040cmuysoQsgwcK"
@@ -49,7 +53,7 @@ class Api:
         qs_components = urllib.parse.parse_qs(url_components.query)
 
         if "limit" not in qs_components:
-            qs_components["limit"] = [self.api_limit]
+            qs_components["limit"] = [str(self.api_limit)]
 
         res = self._do_api_request(url_components.path, qs_components)
         collection = self._map_json_to_collection(res)
@@ -142,7 +146,10 @@ class Api:
             item_type = "events"
         elif "raceresults" in json_obj:
             items = json_obj.get("raceresults")
-            item_type = "raceresults"
+            item_type = "events"
+        elif "raceResultsRace" in json_obj:
+            items = json_obj.get("raceResultsRace").get("results", [])
+            item_type = "raceresult"
         else:
             raise RuntimeError("Api JSON seems to be invalid")
 
@@ -177,16 +184,23 @@ class Api:
                 }
                 collection.items.append(constructor)
 
-            elif item_type == "raceresults":
-                result = Result(id=item["meetingKey"], label=item["meetingName"])
-                result.thumb = item["countryFlag"]
+            elif item_type == "raceresult":
+                template = u"{} {}" if PY2 else "{} {}"
+                result = Result(id=item["driverReference"], label=Result.get_label(item))
+                result.thumb = item["driverImage"]
+                result.info = {
+                    "name": template.format(item["driverFirstName"], item["driverLastName"]),
+                    "team": item["teamName"]
+                }
                 collection.items.append(result)
 
             elif item_type == "events" and item.get("type") == "race":
+                event_ended = self._parse_date(item["meetingEndDate"]) < datetime.datetime.now()
                 event = Event(id=item["meetingKey"], label=item["meetingOfficialName"])
                 event.thumb = item["countryFlag"]
                 event.info = {
-                    "description": Event.get_description(item)
+                    "description": Event.get_description(item, event_ended),
+                    "hasEnded": event_ended
                 }
                 collection.items.append(event)
 
@@ -225,3 +239,11 @@ class Api:
 
         # Fallback (if no matching resolution was found)
         return base64.b64decode(streams[0]["url"]["data"]).decode("ascii")
+
+    def _parse_date(self, value):
+        date = value.split(".")[0]  # Date without microseconds
+        # Work around for bug https://bugs.python.org/issue27400
+        try:
+            return datetime.datetime.strptime(date, self.api_date_format)
+        except TypeError:
+            return datetime.datetime(*(time.strptime(date, self.api_date_format)[0:6]))

@@ -54,14 +54,12 @@ class Items:
         })
         items.append((url, list_item, True))
 
-        # Race results @TODO
-        """
+        # Race results
         list_item = xbmcgui.ListItem(label=self.addon.getLocalizedString(30122))
         url = self.addon_base + PATH_STANDINGS + "?" + urllib.parse.urlencode({
             "action": "results",
         })
         items.append((url, list_item, True))
-        """
 
         return items
 

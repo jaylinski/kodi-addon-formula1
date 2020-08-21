@@ -62,7 +62,7 @@ class ApiTestCase(TestCase):
         self.assertEqual(res.items[1].label, "2 - Red Bull Racing - 78 PTS")
         self.assertEqual(res.items[1].thumb, "https://www.formula1.com/content/dam/fom-website/teams/2020/red-bull-racing-half.png")
 
-    def test_get_racing_results(self):
+    def test_get_race_results(self):
         with open("./tests/mocks/api_fom-results_raceresults.json") as f:
             mock_data = f.read()
 
@@ -70,7 +70,7 @@ class ApiTestCase(TestCase):
 
         res = self.api.standings("api_path")
 
-        self.assertEqual(res.items[0].label, "Pre-Season Test 1")
+        self.assertEqual(res.items[0].label, "Formula 1 Rolex Grosser Preis Von Österreich 2020")
 
     def test_get_events(self):
         with open("./tests/mocks/api_editorial-eventlisting_events.json") as f:
@@ -85,6 +85,18 @@ class ApiTestCase(TestCase):
 
         # Check if only "racing" events are returned
         self.assertEqual(len(res.items), 12)
+
+    def test_get_race_results_detail(self):
+        with open("./tests/mocks/api_fom-results_race.json") as f:
+            mock_data = f.read()
+
+        self.api._do_api_request = Mock(return_value=json.loads(mock_data))
+
+        res = self.api.call("api_path")
+
+        self.assertEqual(res.items[0].label, "1 - HAM - 25 PTS - 1:31:45.279")
+        self.assertEqual(res.items[1].label, "2 - VER - 18 PTS - +24.177s")
+        self.assertEqual(res.items[19].label, "DNF - LEC - 0 PTS - 55:31.636")
 
     def test_call(self):
         with open("./tests/mocks/api_fom-assets_videos.json") as f:
