@@ -182,7 +182,7 @@ class Api:
                 result.thumb = item["countryFlag"]
                 collection.items.append(result)
 
-            elif item_type == "events":
+            elif item_type == "events" and item.get("type") == "race":
                 event = Event(id=item["meetingKey"], label=item["meetingOfficialName"])
                 event.thumb = item["countryFlag"]
                 event.info = {

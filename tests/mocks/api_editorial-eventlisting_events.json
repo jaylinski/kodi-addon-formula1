@@ -56,7 +56,8 @@
             "promoHeaderText": "Formula 3",
             "promoBodyText": "Check out the F3 season calendar",
             "promoCtaLabel": "EXPLORE",
-            "promoCtaLink": "http://www.fiaformula3.com/Calendar"
+            "promoCtaLink": "http://www.fiaformula3.com/Calendar",
+            "layout": "Default"
         }
     ],
     "archiveYearImage": {
@@ -73,7 +74,7 @@
     "year": "2020",
     "currentSeasonContextYear": "2020",
     "raceListingOverride": "2020",
-    "state": "COUNTDOWN-TO-P3",
+    "state": "IDLE",
     "events": [
         {
             "type": "fom-testing",
@@ -347,6 +348,32 @@
             "countryFlag": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/great-britain-flag.png",
             "circuitSmallImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great Britain.png",
             "circuitMediumImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Great Britain%20carbon.png",
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2020/maxver01.png",
+                    "teamColourCode": "0600ef",
+                    "driverTLA": "VER",
+                    "driverLastName": "Verstappen",
+                    "driverFirstName": "Max",
+                    "positionNumber": "1"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2020/lewham01.png",
+                    "teamColourCode": "00D2BE",
+                    "driverTLA": "HAM",
+                    "driverLastName": "Hamilton",
+                    "driverFirstName": "Lewis",
+                    "positionNumber": "2"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2020/valbot01.png",
+                    "teamColourCode": "00D2BE",
+                    "driverTLA": "BOT",
+                    "driverLastName": "Bottas",
+                    "driverFirstName": "Valtteri",
+                    "positionNumber": "3"
+                }
+            ],
             "meetingCountryName": "Great Britain",
             "meetingLocation": "Silverstone",
             "meetingOfficialName": "Emirates Formula 1 70th Anniversary Grand Prix 2020",
@@ -355,7 +382,7 @@
             "meetingKey": "1049",
             "meetingName": "70th Anniversary Grand Prix",
             "gmtOffset": "+01:00",
-            "status": "ongoing",
+            "status": "completed",
             "roundText": "ROUND 5"
         },
         {
@@ -371,6 +398,32 @@
             "countryFlag": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/spain-flag.png",
             "circuitSmallImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Spain.png",
             "circuitMediumImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Track%20icons%204x3/Spain%20carbon.png",
+            "drivers": [
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2020/lewham01.png",
+                    "teamColourCode": "00D2BE",
+                    "driverTLA": "HAM",
+                    "driverLastName": "Hamilton",
+                    "driverFirstName": "Lewis",
+                    "positionNumber": "1"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2020/maxver01.png",
+                    "teamColourCode": "0600ef",
+                    "driverTLA": "VER",
+                    "driverLastName": "Verstappen",
+                    "driverFirstName": "Max",
+                    "positionNumber": "2"
+                },
+                {
+                    "driverImage": "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/drivers/2020/valbot01.png",
+                    "teamColourCode": "00D2BE",
+                    "driverTLA": "BOT",
+                    "driverLastName": "Bottas",
+                    "driverFirstName": "Valtteri",
+                    "positionNumber": "3"
+                }
+            ],
             "meetingCountryName": "Spain",
             "meetingLocation": "Barcelona",
             "meetingOfficialName": "Formula 1 Aramco Gran Premio De España 2020",
@@ -379,7 +432,7 @@
             "meetingKey": "1050",
             "meetingName": "Spanish Grand Prix",
             "gmtOffset": "+02:00",
-            "status": "upcoming",
+            "status": "completed",
             "roundText": "ROUND 6"
         },
         {
@@ -503,6 +556,29 @@
             "roundText": "ROUND 11"
         },
         {
+            "name": "Pro Series - Event 1",
+            "startDate": "2020-10-14T00:01:00",
+            "endDate": "2020-10-15T23:59:00",
+            "gmtOffset": "+01:00",
+            "type": "esports",
+            "city": "Stream Live",
+            "venue": "18:30 UTC",
+            "article": {
+                "id": "3DnTVsG0tMc4EyxbWUemke",
+                "slug": "f1-esports-series-returns-for-fourth-season-in-2020-with-record-prize-fund"
+            },
+            "thumbnail": {
+                "image": {
+                    "title": "esports calendar image 1920 750.jpg",
+                    "path": "/content/dam/fom-website/manual/Misc/Esports/esports%20calendar%20image%201920%20750.jpg",
+                    "url": "https://www.formula1.com/content/dam/fom-website/manual/Misc/Esports/esports%20calendar%20image%201920%20750.jpg"
+                }
+            },
+            "countryFlag": "https://www.formula1.com/content/dam/fom-website/manual/Misc/Esports/f1-red.png",
+            "status": "upcoming",
+            "roundText": "ESPORTS"
+        },
+        {
             "type": "race",
             "url": "/en/racing/2020/Portugal.html",
             "thumbnail": {
@@ -525,6 +601,75 @@
             "gmtOffset": "+00:00",
             "status": "upcoming",
             "roundText": "ROUND 12"
+        },
+        {
+            "name": "Pro Series - Event 2",
+            "startDate": "2020-11-04T00:01:00",
+            "endDate": "2020-11-05T23:59:00",
+            "gmtOffset": "+01:00",
+            "type": "esports",
+            "city": "Stream Live",
+            "venue": "18:30 UTC",
+            "article": {
+                "id": "3DnTVsG0tMc4EyxbWUemke",
+                "slug": "f1-esports-series-returns-for-fourth-season-in-2020-with-record-prize-fund"
+            },
+            "thumbnail": {
+                "image": {
+                    "title": "esports calendar image 1920 750.jpg",
+                    "path": "/content/dam/fom-website/manual/Misc/Esports/esports%20calendar%20image%201920%20750.jpg",
+                    "url": "https://www.formula1.com/content/dam/fom-website/manual/Misc/Esports/esports%20calendar%20image%201920%20750.jpg"
+                }
+            },
+            "countryFlag": "https://www.formula1.com/content/dam/fom-website/manual/Misc/Esports/f1-red.png",
+            "status": "upcoming",
+            "roundText": "ESPORTS"
+        },
+        {
+            "name": "Pro Series - Event 3",
+            "startDate": "2020-11-18T00:01:00",
+            "endDate": "2020-11-19T23:59:00",
+            "gmtOffset": "+01:00",
+            "type": "esports",
+            "city": "Stream Live",
+            "venue": "18:30 UTC",
+            "article": {
+                "id": "3DnTVsG0tMc4EyxbWUemke",
+                "slug": "f1-esports-series-returns-for-fourth-season-in-2020-with-record-prize-fund"
+            },
+            "thumbnail": {
+                "image": {
+                    "title": "esports calendar image 1920 750.jpg",
+                    "path": "/content/dam/fom-website/manual/Misc/Esports/esports%20calendar%20image%201920%20750.jpg",
+                    "url": "https://www.formula1.com/content/dam/fom-website/manual/Misc/Esports/esports%20calendar%20image%201920%20750.jpg"
+                }
+            },
+            "countryFlag": "https://www.formula1.com/content/dam/fom-website/manual/Misc/Esports/f1-red.png",
+            "status": "upcoming",
+            "roundText": "ESPORTS"
+        },
+        {
+            "name": "Pro Series - Event 4",
+            "startDate": "2020-12-09T00:01:00",
+            "endDate": "2020-12-10T23:59:00",
+            "gmtOffset": "+01:00",
+            "type": "esports",
+            "city": "Stream Live",
+            "venue": "18:30 UTC",
+            "article": {
+                "id": "3DnTVsG0tMc4EyxbWUemke",
+                "slug": "f1-esports-series-returns-for-fourth-season-in-2020-with-record-prize-fund"
+            },
+            "thumbnail": {
+                "image": {
+                    "title": "esports calendar image 1920 750.jpg",
+                    "path": "/content/dam/fom-website/manual/Misc/Esports/esports%20calendar%20image%201920%20750.jpg",
+                    "url": "https://www.formula1.com/content/dam/fom-website/manual/Misc/Esports/esports%20calendar%20image%201920%20750.jpg"
+                }
+            },
+            "countryFlag": "https://www.formula1.com/content/dam/fom-website/manual/Misc/Esports/f1-red.png",
+            "status": "upcoming",
+            "roundText": "ESPORTS"
         }
     ],
     "seasonCalendarLink": "https://www.formula1.com/calendar/Formula_1_Official_Calendar.ics",

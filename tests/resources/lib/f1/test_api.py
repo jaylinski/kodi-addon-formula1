@@ -80,8 +80,11 @@ class ApiTestCase(TestCase):
 
         res = self.api.standings("api_path")
 
-        self.assertEqual(res.items[0].label, "Formula 1 Pre-season Testing 2020")
-        self.assertEqual(res.items[0].thumb, "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/spain-flag.png")
+        self.assertEqual(res.items[0].label, "Formula 1 Rolex Grosser Preis Von Österreich 2020")
+        self.assertEqual(res.items[0].thumb, "https://www.formula1.com/content/dam/fom-website/2018-redesign-assets/Flags%2016x9/austria-flag.png")
+
+        # Check if only "racing" events are returned
+        self.assertEqual(len(res.items), 12)
 
     def test_call(self):
         with open("./tests/mocks/api_fom-assets_videos.json") as f:
