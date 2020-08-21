@@ -3,6 +3,7 @@ from future.utils import PY2
 standard_library.install_aliases()  # noqa: E402
 
 from resources.lib.models.list_item import ListItem
+import urllib.parse
 import xbmcgui
 
 
@@ -18,12 +19,18 @@ class Event(ListItem):
         list_item.setInfo("video", {
             "plot": self.info["description"],
         })
-        list_item.setProperty("isPlayable", "false")
+        url = addon_base + "/?" + urllib.parse.urlencode({
+            "action": "call",
+            "call": "fom-results/race?meeting={id}".format(id=self.id)
+        })
+
+        if self.info["hasEnded"]:
+            return url, list_item, True
 
         return None, list_item, False
 
     @staticmethod
-    def get_description(item):
+    def get_description(item, event_ended):
         if PY2:
             template = u"{} / {}\nStart: {}\nStatus: {}"
         else:
@@ -33,5 +40,6 @@ class Event(ListItem):
             item["meetingCountryName"],
             item["meetingLocation"],
             item["meetingStartDate"],
-            item["status"]
+            # Status with fallback for "raceresults" items
+            item.get("status", "completed" if event_ended else "upcoming")
         )
