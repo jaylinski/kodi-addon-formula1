@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon id="plugin.video.formula1" name="Formula 1" version="1.0.0" provider-name="jaylinski">
     <requires>
-        <import addon="xbmc.python" version="2.25.0"/>
+        <import addon="xbmc.python" version="2.26.0"/>
         <import addon="script.module.future" version="0.16.0"/>
         <import addon="script.module.requests" version="2.4.3"/>
     </requires>
@@ -17,7 +17,7 @@
         <forum>https://forum.kodi.tv/showthread.php?tid=352138</forum>
         <website>https://www.formula1.com</website>
         <source>https://github.com/jaylinski/kodi-addon-formula1</source>
-        <news>1.0.0 (2020-08-08)
+        <news>1.0.0 (2020-08-21)
 Initial release.
         </news>
         <assets>

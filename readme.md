@@ -5,7 +5,6 @@
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/jaylinski/kodi-addon-formula1.svg)](https://github.com/jaylinski/kodi-addon-formula1/releases)
 [![Build Status](https://travis-ci.com/jaylinski/kodi-addon-formula1.svg?branch=master)](https://travis-ci.com/jaylinski/kodi-addon-formula1)
 [![Link to Kodi releases](https://img.shields.io/badge/Kodi-v18%20%22Leia%22-green.svg)](https://kodi.wiki/view/Releases)
-[![Link to Kodi releases](https://img.shields.io/badge/Kodi-v17%20%22Krypton%22-green.svg)](https://kodi.wiki/view/Releases)
 
 This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface for
 [formula1.com](https://www.formula1.com/).
@@ -21,6 +20,12 @@ If you are a F1TV subscriber, consider using the [F1TV add-on](https://github.co
 * List standings and events
 
 ## Installation
+
+### Kodi Repository
+
+Follow the instructions on [https://kodi.wiki/view/Add-on:Formula_1](https://kodi.wiki/view/Add-on:Formula_1).
+
+### Manual
 
 * [Download the latest release](https://github.com/jaylinski/kodi-addon-formula1/releases) (`plugin.video.formula1.zip`)
 * Copy the zip file to your Kodi system
