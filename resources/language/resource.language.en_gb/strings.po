@@ -22,7 +22,7 @@ msgid "General"
 msgstr ""
 
 msgctxt "#30010"
-msgid "General"
+msgid "Display and Navigation"
 msgstr ""
 
 msgctxt "#30011"
