@@ -1,6 +1,3 @@
-from future import standard_library
-standard_library.install_aliases()  # noqa: E402
-
 from resources.lib.f1.api import Api
 from resources.lib.kodi.items import Items
 from resources.lib.kodi.settings import Settings

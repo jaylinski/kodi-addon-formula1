@@ -1,6 +1,3 @@
-from future import standard_library
-standard_library.install_aliases()  # noqa: E402
-
 from resources.routes import *
 
 import urllib.parse

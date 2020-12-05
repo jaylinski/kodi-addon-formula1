@@ -1,7 +1,3 @@
-from future import standard_library
-from future.utils import PY2
-standard_library.install_aliases()  # noqa: E402
-
 import base64
 import datetime
 import requests
@@ -185,11 +181,10 @@ class Api:
                 collection.items.append(constructor)
 
             elif item_type == "raceresult":
-                template = u"{} {}" if PY2 else "{} {}"
                 result = Result(id=item["driverReference"], label=Result.get_label(item))
                 result.thumb = item["driverImage"]
                 result.info = {
-                    "name": template.format(item["driverFirstName"], item["driverLastName"]),
+                    "name": "{} {}".format(item["driverFirstName"], item["driverLastName"]),
                     "team": item["teamName"]
                 }
                 collection.items.append(result)
