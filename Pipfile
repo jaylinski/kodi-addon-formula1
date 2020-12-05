@@ -8,11 +8,10 @@ kodistubs = "*"
 pycodestyle = "*"
 
 [packages]
-future = "*"
 requests = "*"
 
 [requires]
-python_version = "2.7"
+python_version = "3.7"
 
 [scripts]
 build = "python scripts/build.py"
