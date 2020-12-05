@@ -1,7 +1,3 @@
-from future import standard_library
-from future.utils import PY2
-standard_library.install_aliases()  # noqa: E402
-
 from resources.lib.models.list_item import ListItem
 import urllib.parse
 import xbmcgui
@@ -31,12 +27,7 @@ class Event(ListItem):
 
     @staticmethod
     def get_description(item, event_ended):
-        if PY2:
-            template = u"{} / {}\nStart: {}\nStatus: {}"
-        else:
-            template = "{} / {}\nStart: {}\nStatus: {}"
-
-        return template.format(
+        return "{} / {}\nStart: {}\nStatus: {}".format(
             item["meetingCountryName"],
             item["meetingLocation"],
             item["meetingStartDate"],

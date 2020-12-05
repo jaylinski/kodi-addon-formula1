@@ -1,7 +1,3 @@
-from future import standard_library
-from future.utils import PY2
-standard_library.install_aliases()  # noqa: E402
-
 from resources.lib.models.list_item import ListItem
 import xbmcgui
 
@@ -24,12 +20,7 @@ class Driver(ListItem):
 
     @staticmethod
     def get_label(item):
-        if PY2:
-            template = u"{} - {} {} - {} PTS"
-        else:
-            template = "{} - {} {} - {} PTS"
-
-        return template.format(
+        return "{} - {} {} - {} PTS".format(
             item["positionNumber"],
             item["driverFirstName"],
             item["driverLastName"],
