@@ -47,6 +47,7 @@ class ApiTestCase(TestCase):
         self.assertEqual(res.items[1].label, "2 - Valtteri Bottas - 58 PTS")
         self.assertEqual(res.items[1].thumb, "https://www.formula1.com/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png")
 
+        self.assertEqual(res.items[20].label, "? - Nikita Mazepin - 0 PTS")
 
     def test_get_constructors(self):
         with open("./tests/mocks/api_editorial-constructorlisting_listing.json") as f:

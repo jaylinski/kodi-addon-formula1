@@ -20,8 +20,8 @@ class Driver(ListItem):
     @staticmethod
     def get_label(item):
         return "{} - {} {} - {} PTS".format(
-            item["positionNumber"],
+            item.get("positionNumber", "?"),
             item["driverFirstName"],
             item["driverLastName"],
-            str(item["championshipPoints"])
+            str(item.get("championshipPoints", 0))
         )
