@@ -4,11 +4,11 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-kodistubs = "*"
+kodistubs = "~=19.0.0"
 pycodestyle = "*"
 
 [packages]
-requests = "*"
+requests = "~=2.22.0"
 
 [requires]
 python_version = "3.7"
