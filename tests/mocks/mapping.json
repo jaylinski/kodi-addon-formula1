@@ -16,8 +16,8 @@
         "mock": "api_editorial-eventlisting_events.json"
     },
     {
-        "url": "https://api.formula1.com/v1/fom-assets/videos?tag=F1%3ATopic%2FFeature&offset=0&limit=3",
-        "mock": "api_fom-assets_videos.json"
+        "url": "https://api.formula1.com/v1/video-assets/videos?offset=0&limit=3",
+        "mock": "api_video-assets_videos.json"
     },
     {
         "url": "https://api.formula1.com/v1/fom-results/raceresults",
@@ -28,7 +28,7 @@
         "mock": "api_fom-results_race.json"
     },
     {
-        "url": "https://player.ooyala.com/sas/player_api/v1/authorization/embed_code/tudTgyOkO_Oa2kec6fNFnApvZ8ig/5paGs4ajE63XiRJPxIs6yH322NPXzKBZ?domain=http%3A%2F%2Fooyala.com&supportedFormats=mp4",
-        "mock": "player_auth.json"
+        "url": "https://edge.api.brightcove.com/playback/v1/accounts/6057949432001/videos/1700475935169308929",
+        "mock": "player_video.json"
     }
 ]

@@ -23,15 +23,16 @@ class ApiTestCase(TestCase):
 
         res = self.api.video_editorial()
 
-        self.assertEqual(res.items[0].label, "Pre-season testing")
-        self.assertEqual(res.items[0].uri, "F1:Topic/Testing")
-        self.assertEqual(res.items[0].thumb, "https://www.formula1.com/content/dam/fom-website/ooyala-videos/2020/2/reg0.transform/5col/image.jpg")
+        self.assertEqual(res.items[0].label, "Must-see")
+        self.assertEqual(res.items[0].uri, "F1:Topic/Must See")
+        self.assertEqual(res.items[0].thumb, "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/ba77f5dc-5216-4f8a-8af1-f0c5904c59ac/df63d8b3-5445-40b8-a6ae-cea539a279a9/658x370/match/image.jpg")
 
-        self.assertEqual(res.items[4].label, "Carlos Sainz: 'Much quicker' in all areas")
-        self.assertEqual(res.items[4].uri, "Q4dWo4ajE6X8J8KUzUycDSs42CKdg3oL")
-        self.assertEqual(res.items[4].thumb, "https://www.formula1.com/content/dam/fom-website/ooyala-videos/2020/2/vid0.transform/5col/image.jpg")
+        self.assertEqual(res.items[4].label, "Polesitter Charles Leclerc")
+        self.assertEqual(res.items[4].info["description"], "Polesitter Charles Leclerc is ...")
+        self.assertEqual(res.items[4].uri, "1700475935169308929")
+        self.assertEqual(res.items[4].thumb, "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/270fdcdb-4275-4a3a-82d0-5d532efd7057/21e8cf3e-334f-4ef3-90b8-adad686dcba3/658x370/match/image.jpg")
 
-        self.assertEqual(res.next_href, "fom-assets/videos?limit=8&offset=6")
+        self.assertEqual(res.next_href, "video-assets/videos?limit=8&offset=6")
 
     def test_get_drivers(self):
         with open("./tests/mocks/api_editorial-driverlisting_listing.json") as f:
@@ -100,19 +101,19 @@ class ApiTestCase(TestCase):
         self.assertEqual(res.items[19].label, "DNF - LEC - 0 PTS - 55:31.636")
 
     def test_call(self):
-        with open("./tests/mocks/api_fom-assets_videos.json") as f:
+        with open("./tests/mocks/api_video-assets_videos.json") as f:
             mock_data = f.read()
 
         self.api._do_api_request = Mock(return_value=json.loads(mock_data))
 
         res = self.api.call("foo")
 
-        self.assertEqual(res.items[0].label, "Jolyon Palmer: Why times don't matter in testing")
-        self.assertEqual(res.items[0].uri, "5paGs4ajE63XiRJPxIs6yH322NPXzKBZ")
-        self.assertEqual(res.items[0].thumb, "https://www.formula1.com/content/dam/fom-website/ooyala-videos/2020/2/vid0.transform/5col/image.jpg")
+        self.assertEqual(res.items[0].label, "Video Caption 1")
+        self.assertEqual(res.items[0].uri, "1700475935169308929")
+        self.assertEqual(res.items[0].thumb, "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/658x370/match/image.jpg")
 
     def test_paging(self):
-        with open("./tests/mocks/api_fom-assets_videos.json") as f:
+        with open("./tests/mocks/api_video-assets_videos.json") as f:
             mock_data = f.read()
 
         self.api._do_api_request = Mock(return_value=json.loads(mock_data))
@@ -120,18 +121,18 @@ class ApiTestCase(TestCase):
         self.api.api_limit = 500
         res = self.api.call("foo?query")
 
-        self.assertEqual(res.items[0].label, "Jolyon Palmer: Why times don't matter in testing")
+        self.assertEqual(res.items[0].label, "Video Caption 1")
         self.assertEqual(res.next_href, None)
 
         self.api.api_limit = 3
         res = self.api.call("foo?tag=bar&limit=3&offset=0")
 
-        self.assertEqual(res.items[0].label, "Jolyon Palmer: Why times don't matter in testing")
+        self.assertEqual(res.items[0].label, "Video Caption 1")
         self.assertEqual(res.limit, 3)
         self.assertEqual(res.offset, 0)
         self.assertEqual(res.next_href, "foo?tag=bar&limit=3&offset=3")
 
-        with open("./tests/mocks/api_fom-assets_videos_page_2.json") as f:
+        with open("./tests/mocks/api_video-assets_videos_page_2.json") as f:
             mock_data = f.read()
 
         self.api._do_api_request = Mock(return_value=json.loads(mock_data))
@@ -143,23 +144,22 @@ class ApiTestCase(TestCase):
         self.assertEqual(res.offset, 3)
         self.assertEqual(res.next_href, "foo?tag=bar&limit=3&offset=6")
 
-    def test_resolve_embed_code(self):
-        with open("./tests/mocks/player_auth_mp4.json") as f:
+    def test_resolve_video_id(self):
+        with open("./tests/mocks/player_video.json") as f:
             mock_data = f.read()
 
+        # Progressive
         self.api._do_player_request = Mock(return_value=json.loads(mock_data))
         self.api.video_stream = "720p"
 
-        res = self.api.resolve_embed_code("5paGs4ajE63XiRJPxIs6yH322NPXzKBZ")
+        res = self.api.resolve_video_id("123")
 
-        self.assertEqual(res, "https://f1.pc.cdn.bitgravity.com/5paGs4ajE63XiRJPxIs6yH322NPXzKBZ/DOcJ-FxaFrRg4gtDEwOjIwbTowODE7WK")
+        self.assertEqual(res, "http://d2n9h2wits23hf.cloudfront.net/media/v1/pmp4/static/clear/6057949432001/main.mp4")
 
-        with open("./tests/mocks/player_auth_hls.json") as f:
-            mock_data = f.read()
-
+        # HLS
         self.api._do_player_request = Mock(return_value=json.loads(mock_data))
         self.api.video_stream = "HLS (Adaptive)"
 
-        res = self.api.resolve_embed_code("5paGs4ajE63XiRJPxIs6yH322NPXzKBZ")
+        res = self.api.resolve_video_id("123")
 
-        self.assertEqual(res, "https://player.ooyala.com/hls/player/iphone/5paGs4ajE63XiRJPxIs6yH322NPXzKBZ.m3u8?ssl=true&secure_ios_token=VTU3citINzFZVG9qYTMvc2VUVUpMRU1FcjBMWHZCMFgrZTkvQkNxQ1NjelBaNVptZmp0NVBmUlJ6Y0hQCmM4cytGQ1BsMmNpS1ZtU2FPRmQ1c3lhWlVRPT0K")
+        self.assertEqual(res, "http://manifest.prod.boltdns.net/manifest/v1/hls/v4/clear/6057949432001/10s/master.m3u8")
