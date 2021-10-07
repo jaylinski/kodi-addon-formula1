@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "97f2d71f6520265630f6169df7ccf45666fe192df2d4bdda1fd4fe74b7f5419e"
+            "sha256": "a37f12ed5fcab41031a93591262061c712475155c01c1f473d0c9264ebb9325d"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.7"
+            "python_version": "3"
         },
         "sources": [
             {
@@ -18,10 +18,10 @@
     "default": {
         "certifi": {
             "hashes": [
-                "sha256:1a4995114262bffbc2413b159f2a1a480c969de6e6eb13ee966d470af86af59c",
-                "sha256:719a74fb9e33b9bd44cc7f3a8d94bc35e4049deebe19ba7d8e108280cfd59830"
+                "sha256:2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee",
+                "sha256:50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8"
             ],
-            "version": "==2020.12.5"
+            "version": "==2021.5.30"
         },
         "chardet": {
             "hashes": [
@@ -57,11 +57,11 @@
     "develop": {
         "kodistubs": {
             "hashes": [
-                "sha256:6151c8d62b746cbfcdc0886bf33b1fd8104c5e50198b6d84ee94f15e509b0c74",
-                "sha256:bcd6124f03129d875f1192ce6912ced7e0649a58253c9b2db2711bc46c51b77e"
+                "sha256:aef7fb14ea2349d2ecf673a240e72e87aff0a34966e0ac9ec15ce90d2b7b84e3",
+                "sha256:d6f3379712fa944704dbb74e49b64fbc32ecc8dbfb5433221f4115e927f5b318"
             ],
             "index": "pypi",
-            "version": "==19.0.2"
+            "version": "==19.0.3"
         },
         "pycodestyle": {
             "hashes": [
