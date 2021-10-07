@@ -3,7 +3,7 @@
 <img align="right" src="https://github.com/xbmc/xbmc/raw/master/addons/webinterface.default/icon-128.png" alt="Kodi logo">
 
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/jaylinski/kodi-addon-formula1.svg)](https://github.com/jaylinski/kodi-addon-formula1/releases)
-[![Build Status](https://img.shields.io/github/workflow/status/jaylinski/kodi-addon-formula1/ci/master.svg)](https://github.com/jaylinski/kodi-addon-formula1/actions)
+[![Build Status](https://img.shields.io/github/workflow/status/jaylinski/kodi-addon-formula1/Continuous%20Integration/master.svg)](https://github.com/jaylinski/kodi-addon-formula1/actions)
 [![Link to Kodi releases](https://img.shields.io/badge/Kodi-v19%20%22Matrix%22-green.svg)](https://kodi.wiki/view/Releases)
 [![Link to Kodi releases](https://img.shields.io/badge/Kodi-v18%20%22Leia%22-green.svg)](https://kodi.wiki/view/Releases)
 
