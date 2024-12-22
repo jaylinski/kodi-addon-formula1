@@ -19,7 +19,7 @@ class Api:
     """This class uses the Formula 1 v1 API."""
 
     api_base_url = "https://api.formula1.com/v1/"
-    api_key = "jHveMyuKQgXOCG3DN2ucX5zVmCpWNsFM"  # Extracted from public Formula 1 Android App
+    api_key = "RNoNDmjJGUFSu1Re9GfMVzJfDClaUV47"  # Extracted from public Formula 1 Android App
     api_limit = 10
     api_date_format = "%Y-%m-%dT%H:%M:%S"
 
