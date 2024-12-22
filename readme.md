@@ -4,8 +4,9 @@
 
 [![GitHub tag (latest SemVer)](https://img.shields.io/github/tag/jaylinski/kodi-addon-formula1.svg)](https://github.com/jaylinski/kodi-addon-formula1/releases)
 [![CI Build Status](https://github.com/jaylinski/kodi-addon-formula1/actions/workflows/ci.yml/badge.svg)](https://github.com/jaylinski/kodi-addon-formula1/actions)
+[![Link to Kodi releases](https://img.shields.io/badge/Kodi-v21%20%22Omega%22-green.svg)](https://kodi.wiki/view/Releases)
+[![Link to Kodi releases](https://img.shields.io/badge/Kodi-v20%20%22Nexus%22-green.svg)](https://kodi.wiki/view/Releases)
 [![Link to Kodi releases](https://img.shields.io/badge/Kodi-v19%20%22Matrix%22-green.svg)](https://kodi.wiki/view/Releases)
-[![Link to Kodi releases](https://img.shields.io/badge/Kodi-v18%20%22Leia%22-green.svg)](https://kodi.wiki/view/Releases)
 
 This [Kodi](https://github.com/xbmc/xbmc) Add-on provides a minimal interface for
 [formula1.com](https://www.formula1.com/).
