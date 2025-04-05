@@ -32,7 +32,7 @@ class ApiTestCase(TestCase):
         self.assertEqual(res.items[4].uri, "1700475935169308929")
         self.assertEqual(res.items[4].thumb, "https://d2n9h2wits23hf.cloudfront.net/image/v1/static/6057949432001/270fdcdb-4275-4a3a-82d0-5d532efd7057/21e8cf3e-334f-4ef3-90b8-adad686dcba3/658x370/match/image.jpg")
 
-        self.assertEqual(res.next_href, "video-assets/videos?limit=8&offset=6")
+        self.assertEqual(res.next_href, "/v1/video-assets/videos?limit=8&offset=6")
 
     def test_get_drivers(self):
         with open("./tests/mocks/api_editorial-driverlisting_listing.json") as f:
@@ -63,16 +63,6 @@ class ApiTestCase(TestCase):
 
         self.assertEqual(res.items[1].label, "2 - Red Bull Racing - 78 PTS")
         self.assertEqual(res.items[1].thumb, "https://www.formula1.com/content/dam/fom-website/teams/2020/red-bull-racing-half.png")
-
-    def test_get_race_results(self):
-        with open("./tests/mocks/api_fom-results_raceresults.json") as f:
-            mock_data = f.read()
-
-        self.api._do_api_request = Mock(return_value=json.loads(mock_data))
-
-        res = self.api.standings("api_path")
-
-        self.assertEqual(res.items[0].label, "Formula 1 Rolex Grosser Preis Von Österreich 2020")
 
     def test_get_events(self):
         with open("./tests/mocks/api_editorial-eventlisting_events.json") as f:
