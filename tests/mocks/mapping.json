@@ -20,11 +20,7 @@
         "mock": "api_video-assets_videos.json"
     },
     {
-        "url": "https://api.formula1.com/v1/fom-results/raceresults",
-        "mock": "api_fom-results_raceresults.json"
-    },
-    {
-        "url": "https://api.formula1.com/v1/fom-results/race?meeting=1050",
+        "url": "https://api.formula1.com/v2/fom-results/race?meeting=1050",
         "mock": "api_fom-results_race.json"
     },
     {
