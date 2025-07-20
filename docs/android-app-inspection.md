@@ -16,7 +16,7 @@
 
 ## Download and patch APK
 
-* Open Android Virtual Device Manager and start a device with Play Store.
+* Open Android Virtual Device Manager and start a device (ARM64) with Play Store.
 * Install the Formula 1-App from the Play Store.
 * Install [Split APKs Installer (SAI)](https://play.google.com/store/apps/details?id=com.aefyr.sai)
   and backup (export) the Formula 1 app to the `Downloads` folder.
