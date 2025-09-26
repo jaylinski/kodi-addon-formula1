@@ -42,13 +42,16 @@ class ApiTestCase(TestCase):
 
         res = self.api.standings("api_path")
 
-        self.assertEqual(res.items[0].label, "1 - Lewis Hamilton - 88 PTS")
-        self.assertEqual(res.items[0].thumb, "https://www.formula1.com/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png")
+        self.assertEqual(res.items[0].label, "1 - Oscar Piastri - 324 PTS")
+        self.assertEqual(res.items[0].thumb, "https://media.formula1.com/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png")
 
-        self.assertEqual(res.items[1].label, "2 - Valtteri Bottas - 58 PTS")
-        self.assertEqual(res.items[1].thumb, "https://www.formula1.com/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png")
+        self.assertEqual(res.items[1].label, "2 - Lando Norris - 299 PTS")
+        self.assertEqual(res.items[1].thumb, "https://media.formula1.com/drivers/L/LANNOR01_Lando_Norris/lannor01.png")
 
-        self.assertEqual(res.items[20].label, "? - Nikita Mazepin - 0 PTS")
+        self.assertEqual(res.items[2].label, "3 - Max Verstappen - 255 PTS")
+        self.assertEqual(res.items[2].thumb, "https://media.formula1.com/M/MAXVER01_Max_Verstappen/maxver01.png")
+
+        self.assertEqual(res.items[5].label, "? - Nikita Mazepin - 0 PTS")
 
     def test_get_constructors(self):
         with open("./tests/mocks/api_editorial-constructorlisting_listing.json") as f:
